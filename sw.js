@@ -2,13 +2,13 @@
 // une fois installée. À chaque changement de CACHE_NAME, les anciens caches sont
 // supprimés et les fichiers sont re-téléchargés une fois (nécessite le PC/Pi allumé
 // ce jour-là), puis ça fonctionne à nouveau sans connexion.
-const CACHE_NAME = 'budget-familial-v1';
+const CACHE_NAME = 'budget-familial-v2';
 const FILES_TO_CACHE = [
   './',
   './index.html',
   './manifest.json',
-  './icon-192.png',
-  './icon-512.png',
+  './icon-192-v2.png',
+  './icon-512-v2.png',
 ];
 
 self.addEventListener('install', (event) => {
