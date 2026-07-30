@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Test PWA</title>
+  <link rel="manifest" href="test-manifest.json">
+  <meta name="theme-color" content="#c67139">
+  <link rel="icon" href="icon-192.png">
+</head>
+<body style="font-family:sans-serif;background:#f5ead8;display:flex;align-items:center;justify-content:center;height:100vh;margin:0;">
+  <h1>Test PWA OK</h1>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('test-sw.js').catch((e) => {
+          document.body.innerHTML += '<p style="color:red">Erreur SW: ' + e + '</p>';
+        });
+      });
+    } else {
+      document.body.innerHTML += '<p style="color:red">Service worker non supporté</p>';
+    }
+  </script>
+</body>
+</html>
