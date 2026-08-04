@@ -2,7 +2,7 @@
 // sur le réseau si une connexion est disponible, pour afficher les mises à jour
 // immédiatement. En cas de coupure réseau (mode avion), on retombe sur le cache.
 // Les autres fichiers (icônes, manifest) restent en cache-first classique.
-const CACHE_NAME = 'budget-familial-v4';
+const CACHE_NAME = 'budget-familial-v5';
 const FILES_TO_CACHE = [
   './',
   './index.html',
