@@ -2,7 +2,7 @@
 // sur le réseau si une connexion est disponible, pour afficher les mises à jour
 // immédiatement. En cas de coupure réseau (mode avion), on retombe sur le cache.
 // Les autres fichiers (icônes, manifest) restent en cache-first classique.
-const CACHE_NAME = 'budget-familial-v3';
+const CACHE_NAME = 'budget-familial-v4';
 const FILES_TO_CACHE = [
   './',
   './index.html',
@@ -32,9 +32,11 @@ self.addEventListener('fetch', (event) => {
     event.request.destination === 'document';
 
   if (isPage) {
-    // Réseau en priorité pour toujours afficher la dernière version de l'app
+    // Réseau en priorité, en contournant explicitement le cache HTTP du navigateur
+    // (sinon même une requête réseau peut retourner une version mise en cache
+    // par le navigateur ou par le CDN de GitHub Pages)
     event.respondWith(
-      fetch(event.request)
+      fetch(event.request, { cache: 'no-store' })
         .then((response) => {
           const clone = response.clone();
           caches.open(CACHE_NAME).then((cache) => cache.put(event.request, clone));
