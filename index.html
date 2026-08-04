@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0045)file:///C:/Users/decou/Downloads/index_5.html -->
+<!-- saved from url=(0045)file:///C:/Users/decou/Downloads/index_6.html -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>
     .sc-placeholder{background:color-mix(in srgb,currentColor 8%,transparent);
       border:1px solid color-mix(in srgb,currentColor 50%,transparent);
@@ -45,16 +45,16 @@
         animation-play-state: running !important; transition-duration: 0s !important;
       }
     }
-  </style><script>window.__resources = {"https://unpkg.com/react@18.3.1/umd/react.production.min.js":"blob:null/d08dee4a-ff6a-4ce1-8391-1cb2b3012dc6","https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js":"blob:null/8d04a096-2336-490c-a4f9-5d322b0fdd9e"};</script>
+  </style><script>window.__resources = {"https://unpkg.com/react@18.3.1/umd/react.production.min.js":"blob:null/03415b51-c656-413b-9dec-e18117cf6473","https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js":"blob:null/313f40e8-72fc-47c9-8595-897fa3ee3241"};</script>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light only">
 <link rel="manifest" href="file:///C:/Users/decou/Downloads/manifest.json">
 <meta name="theme-color" content="#c67139">
 <link rel="icon" href="file:///C:/Users/decou/Downloads/icon-192.png">
-<script src="blob:null/a732ae0a-df8f-4faa-b06c-d3e66120ba95"></script>
+<script src="blob:null/1c919675-0258-4fc9-a2b7-e9867e171eaf"></script>
 
-<style>x-dc{display:none!important}</style><script src="blob:null/d08dee4a-ff6a-4ce1-8391-1cb2b3012dc6"></script><script src="blob:null/8d04a096-2336-490c-a4f9-5d322b0fdd9e"></script><style data-dc-tpl="1">/* Organic — design-system tokens and component classes. This file is the source of truth for the system's look; retune it here and see readme.md. */
+<style>x-dc{display:none!important}</style><script src="blob:null/03415b51-c656-413b-9dec-e18117cf6473"></script><script src="blob:null/313f40e8-72fc-47c9-8595-897fa3ee3241"></script><style data-dc-tpl="1">/* Organic — design-system tokens and component classes. This file is the source of truth for the system's look; retune it here and see readme.md. */
 /* latin-ext */
 @font-face {
   font-family: 'Caprasimo';
@@ -383,7 +383,7 @@ textarea.input { min-height: 90px; resize: vertical; }
 .btn, .tag, .seg, .input { border-radius: 999px; }
 .input { padding-inline: 14px; }
 
-</style><script src="blob:null/764b92b5-ac84-4162-8058-1c47f5b42420" data-dc-tpl="2"></script><style data-dc-tpl="3">
+</style><script src="blob:null/5c3f2a09-d555-4a34-a99d-17566120e23c" data-dc-tpl="2"></script><style data-dc-tpl="3">
 html{color-scheme:light;}
 body{margin:0;background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);}
 a{color:var(--color-accent-700);}
@@ -424,7 +424,7 @@ a:hover{color:var(--color-accent-900);}
 }
 </style></head>
 <body>
-<div id="dc-root"><div class="sc-host" data-sc-name="index_5"><div data-dc-tpl="4" style="min-height: 100vh; display: flex; flex-direction: column;">
+<div id="dc-root"><div class="sc-host" data-sc-name="index_6"><div data-dc-tpl="4" style="min-height: 100vh; display: flex; flex-direction: column;">
   <nav data-dc-tpl="5" class="nav">
     <span data-dc-tpl="6" class="nav-brand">Mon Budget</span>
     <div data-dc-tpl="7" style="margin-left: auto; display: flex; align-items: center; gap: var(--space-1);">
@@ -1044,6 +1044,11 @@ class Component extends DCLogic {
 
   componentDidMount() {
     this.loadYear(this.state.year);
+    document.addEventListener('focusin', function(e) {
+      if (e.target && e.target.tagName === 'INPUT' && e.target.type === 'number') {
+        e.target.select();
+      }
+    });
   }
 
   componentDidUpdate(prevProps, prevState) {
